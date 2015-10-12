@@ -1,33 +1,33 @@
 <template name="main">
-    <div class="container">
-        {{#if page}}
-        <div>
-            <h2>{{page}}'s Page
-                {{#if currentUser}}
-                    {{#if isFollowing}}
-                        <button id="unfollow" class="btn btn-inverse">unfollow</button>
-                        {{else}}
-                        <button id="follow" class="btn btn-primary">follow</button>
-                    {{/if}}
-                {{/if}}
-            </h2>
-        </div>
-        {{#if currentUser}}
+  <div class="container">
+    {{#if page}}
+      <div>
+        <h2>{{page}}'s Page
+          {{#if currentUser}}
+            {{#if isFollowing}}
+              <button id="unfollow" class="btn btn-inverse">unfollow</button>
+            {{else}}
+              <button id="follow" class="btn btn-primary">follow</button>
+            {{/if}}
+          {{/if}}
+        </h2>
+      </div>
+      {{#if currentUser}}
         <form>
-            <div class="input-group">
-                <input type="text" id="post" class="form-control" placeholder="Tell me something..."/>
-                <div class="input-group-btn">
-                    <button class="btn btn-primary">
-                        <i class="glyphicon glyphicon-pencil"></i>
-                        <span>Post</span>
-                    </button>
-                </div>
+          <div class="input-group">
+            <input type="text" id="post" class="form-control" placeholder="Tell me something..."/>
+            <div class="input-group-btn">
+              <button class="btn btn-primary">
+                <i class="glyphicon glyphicon-pencil"></i>
+                <span>Post</span>
+              </button>
             </div>
+          </div>
         </form>
-        {{/if}}
-        {{> posts pageId=page}}
-        {{else}}
-            {{> dashboard}}
-        {{/if}}
-    </div>
+      {{/if}}
+      {{> posts pageId=page}}
+    {{else}}
+      {{> dashboard}}
+    {{/if}}
+  </div>
 </template>
